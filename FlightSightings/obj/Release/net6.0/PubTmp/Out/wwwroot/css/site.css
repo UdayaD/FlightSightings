@@ -1,0 +1,112 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+
+#homebackground {
+    /* The image used */
+    background-image: url("/images/mainBanner/background_17.jpg");
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#homepara{
+    color:aliceblue;
+}
+
+h1{
+    color:azure;
+}
+
+label{
+    color:aliceblue;
+}
+
+#detailView {
+    height: auto;
+    max-width: 20%;
+}
+
+.displayLable {
+    color: aliceblue;
+    font-size:18px;
+}
+
+.displayValue {
+    font-weight: bold;
+    color: black;
+}
+
+    table, tr, td {
+        color: aliceblue;
+    }
+
+#flightList table, tr, th {
+    color: ghostwhite;
+    font-size: 18px;
+}
+
+#searchBar {
+    margin-top: 45px;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%
+}
+
+.imageData {
+    display: none;
+}
+
+#myInput{
+    border-radius:5px;
+}
+
+dt {
+    color: aliceblue;
+    font-size: 18px;
+}
+
+dd {
+    font-weight: bold;
+    color: black;
+}
+
+#Createbtn{
+    color:darkblue;
+    width:82%;
+}
+
+.copyright{
+    text-align:center;
+}
+
+.navbar-nav{
+    display:none;
+}
+
+header{
+    display:none;
+}

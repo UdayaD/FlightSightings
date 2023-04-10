@@ -1,0 +1,98 @@
+﻿@model IEnumerable<FlightSightings.Models.Flight>
+
+@{
+    ViewData["Title"] = "Create Flight";
+
+    Pager pager = new Pager();
+    int pageNo = 0;
+    if (ViewBag.Pager != null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
+}
+
+<h1>Flight Spotter</h1>
+
+<div class="p-0 justify-content-end" id="searchBar">
+    <form asp-action="Index">
+        <span class="btn-group">
+            <input class="form-control" id="searchBox" type="text" name="SearchText" value="@ViewBag.SearchText" placeholder="Search Key"/>
+            <input class="p-1 m-lg-2 btn btn-sm btn-danger" style="border-radius:10px;" type="submit" value="Search"/>
+        </span>
+    </form>
+</div>
+
+<table class="table" id="flightList">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageName)
+            </th>
+            <th>
+                <i class="@ViewData["SortIconMake"]" arial-hidden="true"></i>
+                <a asp-action="Index" asp-route-sortExpression="@ViewData["SortParamMake"]">
+                    @Html.DisplayNameFor(model => model.Make)
+                </a>
+            </th>
+            <th>
+                <i class="@ViewData["SortIconModel"]" arial-hidden="true"></i>
+                <a asp-action="Index" asp-route-sortExpression="@ViewData["SortParamModel"]">
+                    @Html.DisplayNameFor(model => model.Model)
+                </a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Registration)
+            </th>
+            <th class="imageData">
+                @Html.DisplayNameFor(model => model.ImageData)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateTime)
+            </th>
+            <th>
+                <a asp-action="Create" id="Createbtn" class="btn btn-outline-primary ml-1"><i class="far fa-plus-square"></i> Create</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@Url.Content("~/images/" + @item.ImageName)" alt="" class="avatar">
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Make)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Registration)
+                </td>
+                <td class="imageData">
+                    @Html.DisplayFor(modelItem => item.ImageData)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateTime)
+                </td>
+                <td>
+                    <div class="btn-group">
+                        <a asp-action="Details" asp-route-id="@item.Id" class="m-lg-2" title="View"><i class="fa fa-info-circle fa-lg"></i></a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="text-info m-lg-2" title="Edit"><i class="fa fa-marker fa-lg"></i></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="text-danger m-lg-2" title="Delete"><i class="fa fa-trash fa-lg"></i></a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<partial name="_pager" model="@pager"></partial>

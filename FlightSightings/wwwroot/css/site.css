@@ -1,0 +1,124 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+
+#homebackground {
+    /* The image used */
+    background-image: url("/images/mainBanner/background_15.jpg");
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#homepara {
+    color: aliceblue;
+}
+
+label {
+    color: aliceblue;
+}
+
+#thumbImage {
+    height: auto;
+    max-width: 45%;
+}
+
+.displayLable {
+    color: black;
+    font-size: 18px;
+}
+
+.displayValue {
+    font-weight: bold;
+    color: black;
+}
+
+#flightList table, td {
+    color: black;
+}
+
+#flightList table, th {
+    color: #dc3545;
+    font-family: auto;
+    font-size: 24px;
+}
+
+#searchBar {
+    margin-top: 45px;
+    float:right;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%
+}
+
+.imageData {
+    display: none;
+}
+
+#myInput {
+    border-radius: 5px;
+}
+
+dt {
+    color: black;
+    font-size: 18px;
+    font-weight:normal !important;
+}
+
+dd {
+    font-weight: bold;
+    color: black;
+}
+
+#Createbtn {
+    color: darkblue;
+    width: 82%;
+}
+
+.copyright {
+    text-align: center;
+}
+
+.navbar-nav {
+    display: none;
+}
+
+header {
+    display: none;
+}
+
+h1{
+    color:black;
+    font-family:auto;
+}
+
+#searchBox{
+    background-color:silver !important;
+}
+
+.control-label{
+    color:black !important;
+}
